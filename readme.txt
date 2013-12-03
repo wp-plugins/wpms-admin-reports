@@ -53,11 +53,11 @@ The plugin has detailed help tabs that throughly explain the details of each rep
 
 == Screenshots ==
 
-1. /assets/dashboard.png
-2. /assets/site-report.png
-3. /assets/user_report.png
-4. /assets/plugin_report.png
-5. /assets/help-tab.png
+1. Dashboard
+2. Site Report
+3. User Report
+4. Plugin Report
+5. Help Tab
 
 == Changelog ==
 
