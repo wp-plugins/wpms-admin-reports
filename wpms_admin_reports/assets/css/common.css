@@ -1,0 +1,68 @@
+/* CSS Document */
+
+table#wpmsar_report_table thead tr .header {
+	background-image: url(../images/bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+	color:	#21759b;
+}
+table#wpmsar_report_table thead tr .header:hover {
+	color:	#d54e21;
+}
+table#wpmsar_report_table thead tr .headerSortUp {
+	background-image: url(../images/asc.gif);
+}
+table#wpmsar_report_table thead tr .headerSortDown {
+	background-image: url(../images/desc.gif);
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.ttf') format('truetype'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-up:before {
+	color: rgba(46,204,113,1);
+	content: "\e600";
+}
+.icon-arrow-down:before {
+	color: rgba(192,57,43,1);
+	content: "\e601";
+}
+.icon-happy:before {
+	color: rgba(46,204,113,1);
+	content: "\e602";
+}
+.icon-smiley:before {
+	color: rgba(241,196,15,1);
+	content: "\e603";
+}
+.icon-sad:before {
+	color: rgba(230,126,34,1);
+	content: "\e604";
+}
+.icon-angry:before {
+	color: rgba(192,57,43,1);
+	content: "\e605";
+}

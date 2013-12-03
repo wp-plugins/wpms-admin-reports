@@ -1,0 +1,23 @@
+/* CSS Document */
+
+.bloglist {
+	display:none;
+}
+.pc_settings_heading {
+	text-align: center; 
+	border-right: 3px solid black;
+	border-left: 3px solid black;
+}
+.pc_settings_left {
+	border-left: 3px solid black;
+}
+.pc_settings_right {
+	border-right: 3px solid black;
+}
+span.plugin-not-found {
+	color: red;
+}
+.widefat tr:hover td {
+	background-color: #FFF;
+}
+

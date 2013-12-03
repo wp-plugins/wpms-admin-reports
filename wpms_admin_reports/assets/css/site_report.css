@@ -1,0 +1,40 @@
+/* CSS Document */
+
+/* tables */
+.user_column{
+	min-width:45px;
+}
+.ID_column{
+	min-width:25px;
+}	
+.date_column{
+	min-width:80px;
+}
+.status_column{
+	min-width:50px;
+}
+.row-actions{
+	font-size:12px;
+}
+
+/*Four point scale*/
+.wpmsar-best{
+	color: green;
+	fon-weight:bold;
+	text-shadow: 1px 1px 0px lime;
+}
+.wpmsar-good{
+	color: yellow;
+	fon-weight:bold;
+	text-shadow: 1px 1px 2px brown;
+}
+.wpmsar-bad{
+	color: orange;
+	fon-weight:bold;
+	text-shadow: 1px 1px 1px yellow;
+}
+.wpmsar-worst{
+	color: brown;
+	fon-weight:bold;
+	text-shadow: 1px 1px 1px red;
+}
