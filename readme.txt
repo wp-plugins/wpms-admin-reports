@@ -61,5 +61,8 @@ The plugin has detailed help tabs that throughly explain the details of each rep
 
 == Changelog ==
 
+= 1.1 =
+* Major bug in dispatcher - fixed
+
 = 1.0 =
 * The Initial Release
