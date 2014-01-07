@@ -123,7 +123,7 @@ if( !class_exists( 'wpmsar_dashboard_view' ) ):
 					sites_with_users = 100 - sites_no_users;
 					
 				var overallHealthData = {
-					labels : ["Site Up/Down", "Plugin Usage", "Upgradeable PLugins",
+					labels : ["Site Up/Down", "Plugin Usage", "Upgradeable Plugins",
 					 "Unassigned Users", "Sites with Users"],
 					datasets : [
 						{
