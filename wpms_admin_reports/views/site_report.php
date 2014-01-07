@@ -57,7 +57,7 @@ if( !class_exists( 'wpmsar_site_report_view' ) ):
                                         <a href="<?php echo network_admin_url(); ?>site-info.php?id=<?php echo $site->blog_id?>">Edit</a>
                                     </span> | </span>
                                     <span class="backend"><span class="backend">
-                                        <a href="<?php echo get_admin_url() . $site->path; ?>wp-admin/" class="edit">Dashboard</a>
+                                        <a href="<?php echo $site->home_url; ?>wp-admin/" class="edit">Dashboard</a>
                                     </span>  </span>
                                     <!-- Add this functionality it next version @todo
                                     <span class="archive"><span class="archive">
