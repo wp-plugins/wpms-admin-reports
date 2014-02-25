@@ -62,10 +62,9 @@ The plugin has detailed help tabs that throughly explain the details of each rep
 == Changelog ==
 
 = 1.2 =
-* Fixed static method strict warnings
+* Fixed static method strict warnings, which were causing some issues with AJAX.
 * Typo corrections
 * Content changes
-* ISSUE - Site Updater hanging...
 
 = 1.1 =
 * Major bug in dispatcher - fixed

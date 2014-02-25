@@ -155,7 +155,7 @@ if( !class_exists( 'wpmsar_site_report_model' ) ):
 			update_site_option('wpmsar_dashboard_cache', $cache_data);
 		}
 		
-		public function site_check( $json ) {
+		public static function site_check( $json ) {
 			ini_set('default_socket_timeout', 5); 
 			global $wpdb;
 			
@@ -192,7 +192,7 @@ if( !class_exists( 'wpmsar_site_report_model' ) ):
 			return $result;
 		}
 		
-		public function update_site_status( $data ) {
+		public static function update_site_status( $data ) {
 			
 			update_site_option('wpmsar_site_data', $data);
 			update_site_option('wpmsar_site_freshness', time());

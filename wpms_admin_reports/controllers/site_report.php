@@ -28,7 +28,7 @@ if( !class_exists( 'wpmsar_site_report_controller' ) ):
 			$view->display($data);
 		}
 		
-		//AJAX Requests
+		//AJAX Reqeusts		
 		public static function site_check(){
 			echo self::__process_ajax_request('site_report', get_class(self::__get_model()), 'site_check' );
 			die();			
