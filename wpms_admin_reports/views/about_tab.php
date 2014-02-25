@@ -6,7 +6,7 @@ if( !class_exists( 'wpmsar_about_tab_view' ) ):
 		public function display(){?>
 			<style>.tab-about li { list-style: none; }</style>
 			<h1>WordPress Multisite Admin Reports</h1>
-			<h2>Version: 1.0</h2>
+			<h2>Version: 1.2</h2>
 			<p>
 				<a href="http://wordpress.org/extend/plugins/wpms_admin_reports/" target="_blank">WordPress.org</a> | 
 				<a href="https://github.com/cleanshooter/wpms_admin_reports" target="_blank">GitHub Repository</a> | 
@@ -17,7 +17,7 @@ if( !class_exists( 'wpmsar_about_tab_view' ) ):
 					<ul>
                     	<li>
                         	<h3>Joe Motacek</h3>
-                        	<p>This plugin was orginally inspired by Plugin Stats.  I find that as an administrator I needed more information out of WordPress than the standard pages provided.  So I decided to create more robust reporting tool.  This is the first version so if there are any bugs or issues please report them on GitHub.  Also if there are any features you want me to add let me know.  I have only tested this on 3.7.x I am unsure if it works on earlier versions, more people testing would be much appreciated.</p>
+                        	<p>This plugin was orginally inspired by Plugin Stats.  I find that as an administrator I needed more information out of WordPress than the standard pages provided.  So I decided to create more robust reporting tool.  This is the first version so if there are any bugs or issues please report them on GitHub.  Also if there are any features you want me to add let me know.</p>
                         </li>
                         <li><h3>Future Features</h3>
                         	<ul>

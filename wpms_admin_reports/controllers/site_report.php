@@ -28,12 +28,13 @@ if( !class_exists( 'wpmsar_site_report_controller' ) ):
 			$view->display($data);
 		}
 		
-		public function site_check(){
+		//AJAX Requests
+		public static function site_check(){
 			echo self::__process_ajax_request('site_report', get_class(self::__get_model()), 'site_check' );
 			die();			
 		}
 		
-		public function update_site_status(){
+		public static function update_site_status(){
 			echo self::__process_ajax_request('site_report', get_class(self::__get_model()), 'update_site_status' );
 			die();			
 		}

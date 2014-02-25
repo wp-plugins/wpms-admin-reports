@@ -52,27 +52,27 @@ if( !class_exists( 'wpmsar_menu_controller' ) ):
 		}
 		
 		//Callbacks
-		public function dashboard() {
+		public static function dashboard() {
 			self::__get_controller('dashboard')->load_view();;
 		}
 		
-		public function plugin_report() {
+		public static function plugin_report() {
 			self::__get_controller('plugin_report')->load_view();
 		}
 		
-		public function site_report() {
+		public static function site_report() {
 			self::__get_controller('site_report')->load_view();
 		}
 		
-		public function user_report() {
+		public static function user_report() {
 			self::__get_controller('user_report')->load_view();
 		}
 		
-		public function help_tabs() {
+		public static function help_tabs() {
 			self::__get_controller('help_tabs');		     
 		}
 		
-		public function load_common_resources($hook){
+		public static function load_common_resources($hook){
 			self::__get_helper('resources')->load_scripts($hook);
 		}
 		

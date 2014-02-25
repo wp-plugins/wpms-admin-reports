@@ -1,13 +1,5 @@
 <?php 
 /**
-* Plugin Name: WordPress Multisite Admin Reports
-* Plugin URI: http://www.wordpress.org/plugins/wpms_admin_reports
-* Description: TWPMS Admin Reports is a reporting tool for Wordpress Multisite administrators.
-* Version: 1.1
-* Author: Joe Motacek
-* Author URI: http://www.joemotacek.com
-* License: GPL2
-*
 * @package wpms_admin_reports
 * @since 0.1
 *
@@ -35,36 +27,36 @@ if ( !class_exists('wpmsar_dispatcher') ):
 		}
 		
 		//Callbacks in order listed in order of registration
-		public function add_menu() {
+		public static function add_menu() {
 			self::__get_controller('menu');		
 		}
 		
-		public function last_login($user_login, $user) {
+		public static function last_login($user_login, $user) {
 			$user_report = self::__get_controller('user_report');
 			$user_report->udpate_last_login($user_login, $user);		
 		}
 		
-		public function update_plugin_list() {
+		public static function update_plugin_list() {
 			$plugin_stats = self::__get_controller('plugin_report');
 			$plugin_stats->update_plugin_list();
 		}
 		
-		public function update_plugin_status() {
+		public static function update_plugin_status() {
 			$plugin_stats = self::__get_controller('plugin_report');
 			$plugin_stats->update_plugin_status();
 		}
 		
-		public function update_derelict_status() {
+		public static function update_derelict_status() {
 			$plugin_stats = self::__get_controller('plugin_report');
 			$plugin_stats->update_derelict_status();
 		}
 		
-		public function site_check() {
+		public static function site_check() {
 			$site_report = self::__get_controller('site_report');
 			$site_report->site_check();
 		}
 		
-		public function update_site_status() {
+		public static function update_site_status() {
 			$site_report = self::__get_controller('site_report');
 			$site_report->update_site_status();
 		}

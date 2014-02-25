@@ -27,18 +27,18 @@ if( !class_exists( 'wpmsar_plugin_report_controller' ) ):
 		}
 		
 		//AJAX Requests
-		public function update_plugin_list(){
+		public static function update_plugin_list(){
 			echo self::__process_ajax_request('plugin_report', get_class(self::__get_model()), 'update_plugin_list' );
 			die();	
 		}
 		
-		public function update_plugin_status(){
+		public static function update_plugin_status(){
 			
 			echo self::__process_ajax_request('plugin_report', get_class(self::__get_model()), 'derelict_check' );
 			die();			
 		}
 		
-		public function update_derelict_status(){			
+		public static function update_derelict_status(){			
 			echo self::__process_ajax_request('plugin_report', get_class(self::__get_model()), 'update_derelict_status' );
 			die();			
 		}
