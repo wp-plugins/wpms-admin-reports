@@ -103,7 +103,7 @@ if( !class_exists( 'wpmsar_plugin_report_model' ) ):
 			update_site_option('wpmsar_dashboard_cache', $cache_data);
 		}
 		
-		public static function update_plugin_list($plugin_list = null) {
+		public function update_plugin_list($plugin_list = null) {
 			global $wpdb, $current_site;
 			
 			$plugins = get_plugins();
@@ -155,7 +155,7 @@ if( !class_exists( 'wpmsar_plugin_report_model' ) ):
 			return "Plugin list updated...";
 		}
 		
-		public static function derelict_check( $plugin ) {
+		public function derelict_check( $plugin ) {
 			ini_set('default_socket_timeout', 10); 
 			
 			$plugins = get_plugins();
@@ -208,7 +208,7 @@ if( !class_exists( 'wpmsar_plugin_report_model' ) ):
 			return $result;
 		}
 		
-		public static function update_derelict_status( $data ) {
+		public function update_derelict_status( $data ) {
 			
 			update_site_option('wpmsar_plugin_derelict_data', $data);
 			update_site_option('wpmsar_plugin_report_data_freshness', time());

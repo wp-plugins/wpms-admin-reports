@@ -21,24 +21,23 @@ jQuery(function($) {
 			
 			var siteName = '{"site_name" : "' + site_list[i] + '"}';
 			//alert(siteName);
-			var json_sitename = JSON && JSON.parse(siteName) || $.parseJSON(siteName); 
-			
+			var json_sitename = JSON.parse(siteName);
 			jQuery.getJSON(
 				ajax_object.ajax_url,
 				{ 
 					action :	'site_check',
 					nonce :		ajax_object.ajax_nonce,
 					json_data : json_sitename
-				})
-				.done(function(data) {
+				},
+				function(data) {
 					sites_updated += 1;
 					$('#progress_status').html(data.message + " " + sites_updated + " - " + site_count + " sites updated");
 					str_status += '"' + data.site_name + '" : "' + data.status + '"';
 					progress += progress_increment;
 					$( "#progress_bar" ).progressbar( "option", "value", progress );
 					
-					//alert(sites_updated + '/' + site_count + " sites updated");
-					if( parseInt(sites_updated) == parseInt(site_count) ){
+					//alert(sites_udpated + '/' + site_count + " sites updated");
+					if( sites_updated == site_count ){
 						str_status += "}";
 						//alert(str_status);
 						jsonStatus = JSON.parse(str_status);
@@ -59,10 +58,6 @@ jQuery(function($) {
 					}else{
 						str_status += ",";
 					}
-				})
-				.fail(function( jqxhr, textStatus, error ) {
-					var err = textStatus + ", " + error;
-					$('#progress_status').html( "Request Failed: " + err  + ". <br/>Please report to this error to the developer.");
 				}
 			);
 		}

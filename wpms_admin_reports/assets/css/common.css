@@ -16,6 +16,12 @@ table#wpmsar_report_table thead tr .headerSortUp {
 table#wpmsar_report_table thead tr .headerSortDown {
 	background-image: url(../images/desc.gif);
 }
+table#wpmsar_report_table tr:nth-child(even){
+	background-color: #F9F9F9;
+}
+table#wpmsar_report_table .archived{
+	background: none repeat scroll 0% 0% #FFEBE8 !important;
+}
 
 @font-face {
 	font-family: 'icomoon';

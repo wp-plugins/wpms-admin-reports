@@ -47,7 +47,7 @@ if( !class_exists( 'wpmsar_user_report_view' ) ):
                     	<?php 
 						foreach($data as $user){
 							?>
-                        	<tr>
+                        	<tr <?php if($user->disabled){ echo "class='archived'"; }?>>
                             	<td><?php echo $user->id;?></td>
                             	<td><a href="<?php echo network_admin_url() .
 									'user-edit.php?user_id=' .
@@ -64,7 +64,22 @@ if( !class_exists( 'wpmsar_user_report_view' ) ):
                                         </span></span>-->
                                     </div>
                                 </td>
-                                <td><?php echo $user->display_name;?></td>
+                                <td>
+                                    <?php echo $user->display_name;?>
+                                    <div class="row-actions">
+                                        <?php if($user->disabled){ 
+                                            $enable_url = network_admin_url() . 'admin.php?page=wpmsar_user_report&action=enalbe_user&user_id=' . $user->id;?>
+                                        <span class="edit">
+                                            <a href="<?php echo wp_nonce_url($enable_url, 'wpmasr_enable_user'); ?>">Enable</a>
+                                        </span>
+                                        <?php } else { 
+                                            $disable_url = network_admin_url() . 'admin.php?page=wpmsar_user_report&action=disable_user&user_id=' . $user->id;?>
+                                        <span class="delete">
+                                            <a href="<?php echo wp_nonce_url($disable_url, 'wpmasr_disable_user'); ?>">Disable</a>
+                                        </span>
+                                        <?php } ?>
+                                    </div>
+                                </td>
                                 <td><a href="mailto:<?php echo $user->user_email?>"><?php echo $user->user_email;?></a>
                                     <div class="row-actions">
                                         <span class="edit">

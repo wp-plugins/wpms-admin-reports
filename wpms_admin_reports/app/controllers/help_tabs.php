@@ -1,12 +1,10 @@
 <?php
 if ( $_SERVER['SCRIPT_FILENAME'] == __FILE__ )
 	die( 'Access denied.' );
-	
-require_once( MCMVC_PLUGIN_DIR . '/moto_core_mvc/controller.php');
 
 if( !class_exists( 'wpmsar_help_tabs_controller' ) ):
 
-	class wpmsar_help_tabs_controller extends mcmvc_controller {
+	class wpmsar_help_tabs_controller extends mcmvc {
 		
 		public function __construct() {
 			$screen = get_current_screen();
@@ -38,24 +36,24 @@ if( !class_exists( 'wpmsar_help_tabs_controller' ) ):
 		}
 		
 		//Callbacks
-		public static function about_tab() {
-			return self::__get_view('about_tab')->display();
+		public function about_tab() {
+			return self::__get_view(WPMSAR_PLUGIN_DIR, 'about_tab', 'wpmsar')->display();
 		}
 		
-		public static function dashboard_tab() {
-			return self::__get_view('dashboard_tab')->display();
+		public function dashboard_tab() {
+			return self::__get_view(WPMSAR_PLUGIN_DIR, 'dashboard_tab', 'wpmsar')->display();
 		}
 		
-		public static function site_report_tab() {
-			return self::__get_view('site_report_tab')->display();
+		public function site_report_tab() {
+			return self::__get_view(WPMSAR_PLUGIN_DIR, 'site_report_tab', 'wpmsar')->display();
 		}
 		
-		public static function user_report_tab() {
-			return self::__get_view('user_report_tab')->display();
+		public function user_report_tab() {
+			return self::__get_view(WPMSAR_PLUGIN_DIR, 'user_report_tab', 'wpmsar')->display();
 		}
 		
-		public static function plugin_report_tab() {
-			return self::__get_view('plugin_report_tab')->display();
+		public function plugin_report_tab() {
+			return self::__get_view(WPMSAR_PLUGIN_DIR, 'plugin_report_tab', 'wpmsar')->display();
 		}
 		
 	}

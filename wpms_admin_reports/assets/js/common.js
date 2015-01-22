@@ -25,4 +25,5 @@ jQuery(function($) {
 		cssPageSize: 	'.pagesize',
 		cssDisabled: 	'disabled'
 	});
+
 });

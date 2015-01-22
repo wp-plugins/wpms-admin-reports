@@ -2,8 +2,8 @@
 /**
 * Plugin Name: WordPress Multisite Admin Reports
 * Plugin URI: http://www.wordpress.org/plugins/wpms_admin_reports
-* Description: WPMS Admin Reports is a reporting tool for Wordpress Multisite administrators.
-* Version: 1.2
+* Description: WPMS Admin Reports is a reporting and management tool for Wordpress Multisite administrators.
+* Version: 1.2.3
 * Author: Joe Motacek
 * Author URI: http://www.joemotacek.com
 * License: GPL2
@@ -15,12 +15,9 @@
 * Plugin Bootstrap
 * Check requirements and gets instance of plugin
 */
-
 //Define requirments
-define( 'MCMVC_NAME', 'WordPress Multsite Admin Reports' );
-define( 'MCMVC_SHORT_CODE', 'wpmsar' );
-define( 'MCMVC_REQUIRED_PHP_VERSION', '5.3.1' ); 
-define( 'MCMVC_REQUIRED_WP_VERSION', '3.1' ); 
+define( 'MCMVC_REQUIRED_PHP_VERSION', 	'5.3.1' ); 
+define( 'MCMVC_REQUIRED_WP_VERSION',  	'3.1' ); 
 
 function mcmvc_requirments_check() {
 	global $wp_version;
@@ -37,10 +34,11 @@ function mcmvc_requirments_check() {
 }
 
 if( mcmvc_requirments_check() ) {
-	require_once ( WPMU_PLUGIN_DIR . '/wpms_admin_reports/' . MCMVC_SHORT_CODE . '_dispatcher.php');
-	$classname = MCMVC_SHORT_CODE . '_dispatcher';
+	require_once ( WPMU_PLUGIN_DIR . '/wpms_admin_reports/mcmvc.php');
+	require_once ( WPMU_PLUGIN_DIR . '/wpms_admin_reports/dispatcher.php');
+	$classname = 'wpmsar_dispatcher';
 	if( class_exists( $classname ) ) {
-		$GLOBALS[MCMVC_SHORT_CODE] = new $classname;
+		$GLOBALS['wpmsar'] = new $classname;
 	} else{
 		throw new Exception( $classname . ' error: static method get_dispatcher does not exist.');
 	}

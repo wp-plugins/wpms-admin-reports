@@ -18,6 +18,9 @@ if( !class_exists( 'wpmsar_user_report_tab_view' ) ):
                         <li><span class="icon-angry"></span> - the user has not logged in in over a year.</li>
                     </ul>
                 </li>
+                <li><h3>Enable & Disable Users</h3>
+                	<p>You can now dictate whether users can continue to login to your entire multi-site globally with the click of a button.  It is no longer necessary to go to each site the user is registered on and delete them or worry about ressaigning their posts to someone else or any of that other nonsense WordPress thought would be a good idea.  Now you can simply disable their account.  Once disabled they will no longer be able to login and their user account will no longer show up in any site user management list and all of their posts will remain on the site and be attributed to them as the author.  Their accounts will only appear on this plugins user report page.</p>
+                </li>
 			</ul>
 		<?php }
 	}

@@ -33,6 +33,7 @@ if( !class_exists( 'wpmsar_dashboard_tab_view' ) ):
                  	<p>This chart shows where all of your plugins stand as far as how well kept they are.  For more information about how plugin status is determined please reference the Plugin Report help tab.</p>
                  </li>
 			</ul>
+            <p>NOTE: We do not include users you have disabled using this plugin in any of the counts above.</p>
 		<?php }
 	}
 endif;
