@@ -2,7 +2,7 @@
 Contributors: Cleanshooter
 Tags: multisite, network, reports, wpms reports, admin reports
 Requires at least: 3.4.1
-Tested up to: 4.1.
+Tested up to: 4.1
 Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
