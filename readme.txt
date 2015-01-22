@@ -12,6 +12,7 @@ WPMS Admin Reports is a reporting tool for Wordpress Multisite administrators.
 == Description ==
 
 **Key Features**
+
 * Multisite heath metrics
 * Email all site admins from single button click
 * Site status checker
