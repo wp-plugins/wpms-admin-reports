@@ -31,11 +31,11 @@ if( !class_exists( 'wpmsar_user_report_controller' ) ):
 				}
 				if ($action == "enable_user"){
 					check_admin_referer('wpmasr_enable_user');
-					update_user_meta($id, 'disabled', false);
+					delete_user_meta($id, 'disabled');
 					$msg = "User%20enabeled";
 				}
 				wp_redirect(network_admin_url("admin.php?page=wpmsar_user_report&msg=".$msg));
-				exit;
+				exit();
 			}
 
 			$data = $this->model->get_data();

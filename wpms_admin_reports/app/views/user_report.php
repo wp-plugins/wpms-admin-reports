@@ -67,8 +67,8 @@ if( !class_exists( 'wpmsar_user_report_view' ) ):
                                 <td>
                                     <?php echo $user->display_name;?>
                                     <div class="row-actions">
-                                        <?php if($user->disabled){ 
-                                            $enable_url = network_admin_url() . 'admin.php?page=wpmsar_user_report&action=enalbe_user&user_id=' . $user->id;?>
+                                        <?php if($user->disabled){
+                                            $enable_url = network_admin_url() . 'admin.php?page=wpmsar_user_report&action=enable_user&user_id=' . $user->id;?>
                                         <span class="edit">
                                             <a href="<?php echo wp_nonce_url($enable_url, 'wpmasr_enable_user'); ?>">Enable</a>
                                         </span>
