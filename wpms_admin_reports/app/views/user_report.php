@@ -6,7 +6,10 @@ if( !class_exists( 'wpmsar_user_report_view' ) ):
 
 	class wpmsar_user_report_view {
 		
-		public function display($data){
+		public function display($data, $messages){
+            foreach($messages as $message){
+                echo $message;
+            }
 			?>
 			<div class="wrap">
             	<?php screen_icon('users');?>
@@ -70,12 +73,12 @@ if( !class_exists( 'wpmsar_user_report_view' ) ):
                                         <?php if($user->disabled){
                                             $enable_url = network_admin_url() . 'admin.php?page=wpmsar_user_report&action=enable_user&user_id=' . $user->id;?>
                                         <span class="edit">
-                                            <a href="<?php echo wp_nonce_url($enable_url, 'wpmasr_enable_user'); ?>">Enable</a>
+                                            <a href="<?php echo wp_nonce_url($enable_url, 'wpmsar_enable_user'); ?>">Enable</a>
                                         </span>
                                         <?php } else { 
                                             $disable_url = network_admin_url() . 'admin.php?page=wpmsar_user_report&action=disable_user&user_id=' . $user->id;?>
                                         <span class="delete">
-                                            <a href="<?php echo wp_nonce_url($disable_url, 'wpmasr_disable_user'); ?>">Disable</a>
+                                            <a href="<?php echo wp_nonce_url($disable_url, 'wpmsar_disable_user'); ?>">Disable</a>
                                         </span>
                                         <?php } ?>
                                     </div>

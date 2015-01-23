@@ -3,7 +3,7 @@
 * Plugin Name: WordPress Multisite Admin Reports
 * Plugin URI: http://www.wordpress.org/plugins/wpms_admin_reports
 * Description: WPMS Admin Reports is a reporting and management tool for Wordpress Multisite administrators.
-* Version: 1.2.4
+* Version: 1.2.5
 * Author: Joe Motacek
 * Author URI: http://www.joemotacek.com
 * License: GPL2

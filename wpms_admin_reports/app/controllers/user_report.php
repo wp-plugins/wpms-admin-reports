@@ -18,29 +18,24 @@ if( !class_exists( 'wpmsar_user_report_controller' ) ):
 			if( !current_user_can('manage_network')){
 				wp_die( 'WPMSAR - Network Admins Only' );
 			}
-
+			$messages = array();
 			if(isset($_GET['action']) && isset($_GET['user_id']) ){
 				$action = $_GET['action'];
 				$id = $_GET['user_id'];
 				//Start Here:
-				$msg = "";
-				if ($action == "disable_user"){
-					check_admin_referer('wpmasr_disable_user');
+				if ($action == "disable_user" && wp_verify_nonce($_GET['_wpnonce'],'wpmsar_disable_user')){
 					update_user_meta($id, 'disabled', true);
-					$msg = "User%20disabeled";
+					array_push($messages, "<div class='error'><p>User has been disabled.</p></div>");
 				}
-				if ($action == "enable_user"){
-					check_admin_referer('wpmasr_enable_user');
+				if ($action == "enable_user" && wp_verify_nonce($_GET['_wpnonce'],'wpmsar_enable_user')){
 					delete_user_meta($id, 'disabled');
-					$msg = "User%20enabeled";
+					array_push($messages, "<div class='updated'><p>User has been enabled.</p></div>");
 				}
-				wp_redirect(network_admin_url("admin.php?page=wpmsar_user_report&msg=".$msg));
-				exit();
 			}
 
 			$data = $this->model->get_data();
 			$view = self::__get_view(WPMSAR_PLUGIN_DIR);
-			$view->display($data);
+			$view->display($data, $messages);
 		}
 		
 		public function udpate_last_login($user_login, $user){

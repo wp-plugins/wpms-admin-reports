@@ -6,8 +6,11 @@ if( !class_exists( 'wpmsar_site_report_view' ) ):
 
 	class wpmsar_site_report_view {
 		
-		public function display($data){
+		public function display($data, $messages){
 			global $blog_id;
+            foreach($messages as $message){
+                echo $message;
+            }
 			?>
 			<div class="wrap">
             	<?php screen_icon('ms-admin');?>
@@ -66,7 +69,7 @@ if( !class_exists( 'wpmsar_site_report_view' ) ):
 									<span class="archive"><span class="archive">
                                     	<a href="<?php
 										$url = network_admin_url() . 
-											'admin.php?page=wpmsar_site_report&amp;noheader=true&amp;action=archive&amp;id=' . 
+											'admin.php?page=wpmsar_site_report&action=archive&id=' . 
 											$site->blog_id;
 										echo wp_nonce_url($url, 'wpmsar_archive')?>" onclick="if (!confirm('Are you sure?')) return false;">Archive</a>
                                     </span></span>
@@ -74,7 +77,7 @@ if( !class_exists( 'wpmsar_site_report_view' ) ):
                                     <span class="archive"><span class="archive">
                                     	<a href="<?php
 										$url = network_admin_url() . 
-											'admin.php?page=wpmsar_site_report&amp;noheader=true&amp;action=unarchive&amp;id=' . 
+											'admin.php?page=wpmsar_site_report&action=unarchive&id=' . 
 											$site->blog_id;
 										echo wp_nonce_url($url, 'wpmsar_unarchive')?>" onclick="if (!confirm('Bring it back?')) return false;" >Unarchive</a>
                                     </span></span>

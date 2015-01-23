@@ -22,35 +22,31 @@ if( !class_exists( 'wpmsar_site_report_controller' ) ):
 		}
 		
 		public function load_view() {
-			
+			$messages = array();
 			if(isset($_GET['action']) && isset($_GET['id']) ){
 				$action = $_GET['action'];
 				$id = $_GET['id'];
-				if ($action == "archive"){
-					check_admin_referer('wpmsar_archive');
+				if ($action == "archive" && wp_verify_nonce($_GET['_wpnonce'],'wpmsar_archive')){
 					if( !is_archived($id)){
 						update_blog_status( $id, 'archived', '1' );
-						$msg = "Blog Archived - Please%20update%20data%20to%20see%20changed%20status.";
+						array_push($messages, "<div class='updated'><p>Blog Archived - Please update data to see changed status.</p></div>");
 					}else{
-						$msg = "Blog%20is%20already%20archived...";
+						array_push($messages, "<div class='error'><p>Blog is already archived...</p></div>");
 					}
 				}
-				if ($action == "unarchive"){
-					check_admin_referer('wpmsar_unarchive');
+				if ($action == "unarchive" && wp_verify_nonce($_GET['_wpnonce'],'wpmsar_unarchive')){
 					if( is_archived($id)){
 						update_blog_status( $id, 'archived', '0' );
-						$msg = "Blog%20Unarchived%20-%20Please%20update%20data%20to%20see%20changed%20status.";
+						array_push($messages, "<div class='updated'><p>Blog Unarchived - Please update data to see changed status.</p></div>");
 					}else{
-						$msg = "Blog%20is%20already%20unarchived...";
+						array_push($messages, "<div class='error'><p>Blog is already unarchived...</p></div>");
 					}
 				}
-				wp_redirect(network_admin_url("admin.php?page=wpmsar_site_report&msg=".$msg));
-				exit;
 			}
 			
 			$data = self::__get_model(WPMSAR_PLUGIN_DIR)->get_data();
 			$view = self::__get_view(WPMSAR_PLUGIN_DIR);
-			$view->display($data);
+			$view->display($data, $messages);
 		}
 		
 		public function site_check(){
